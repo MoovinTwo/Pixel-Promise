@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "pixel_promise",
+  "version": "${version}",
+  "name": "Pixel Promise",
+  "description": "A magic mod for Minecraft 1.20.1",
+  "authors": [],
+  "contact": {},
+  "license": "Apache-2.0",
+  "icon": "assets/pixel_promise/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "com.moovintwo.pixel_promise.client.Pixel_promiseDataGenerator"
+    ],
+    "client": [
+      "com.moovintwo.pixel_promise.client.Pixel_promiseClient"
+    ],
+    "main": [
+      "com.moovintwo.pixel_promise.Pixel_promise"
+    ]
+  },
+  "mixins": [
+    "pixel_promise.mixins.json",
+    {
+      "config": "pixel_promise.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
