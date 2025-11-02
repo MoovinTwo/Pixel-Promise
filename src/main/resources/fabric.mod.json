@@ -4,17 +4,17 @@
   "version": "${version}",
   "name": "Pixel Promise",
   "description": "A magic mod for Minecraft 1.20.1",
-  "authors": [],
+  "authors": ["Moovintwo"],
   "contact": {},
   "license": "Apache-2.0",
   "icon": "assets/pixel_promise/icon.png",
   "environment": "*",
   "entrypoints": {
     "fabric-datagen": [
-      "com.moovintwo.pixel_promise.client.Pixel_promiseDataGenerator"
+      "com.moovintwo.pixel_promise.Pixel_promiseDataGenerator"
     ],
     "client": [
-      "com.moovintwo.pixel_promise.client.Pixel_promiseClient"
+      "com.moovintwo.pixel_promise.Pixel_promiseClient"
     ],
     "main": [
       "com.moovintwo.pixel_promise.Pixel_promise"

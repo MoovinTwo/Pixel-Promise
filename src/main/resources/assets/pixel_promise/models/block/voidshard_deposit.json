@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "pixel_promise:block/voidshard_deposit"
+  }
+}

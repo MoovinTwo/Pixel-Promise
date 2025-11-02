@@ -4,6 +4,7 @@
   "package": "com.moovintwo.pixel_promise.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "PixelMixin"
   ],
   "injectors": {
     "defaultRequire": 1
