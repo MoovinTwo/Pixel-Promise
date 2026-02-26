@@ -1,8 +1,12 @@
 {
-  "item.pixel_promise.voidcharm": "Void Charm",
+  "item.pixel_promise.binding_charm": "Binding Charm",
   "item.pixel_promise.icon": "Mod Logo",
-  "item.pixel_promise.voidshard": "Void Shard",
-  "block.pixel_promise.voidshard_deposit": "Void Shard Deposit",
+  "item.pixel_promise.void_shard": "Void Shard",
+  "block.pixel_promise.void_shard_deposit": "Void Shard Deposit",
+  "enchantment.pixel_promise.pride": "§6Binding of Pride",
+  "effect.pixel_promise.fractured": "Fractured",
 
-  "pixel_promise.itemgroup.ruby": "Ruby Tutorial Group"
+  "pixel_promise.itemgroup.group": "Pixel Promise",
+
+  "tooltip.pixel_promise.binding_charm": "A charm that binds a tool to a\npower granted by the §dWatchers"
 }

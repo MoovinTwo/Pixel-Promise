@@ -24,7 +24,7 @@
                   }
                 }
               ],
-              "name": "pixel_promise:voidshard_deposit"
+              "name": "pixel_promise:void_shard_deposit"
             },
             {
               "type": "minecraft:item",
@@ -47,7 +47,7 @@
                   "function": "minecraft:explosion_decay"
                 }
               ],
-              "name": "pixel_promise:voidshard"
+              "name": "pixel_promise:void_shard"
             }
           ]
         }
@@ -55,5 +55,5 @@
       "rolls": 1.0
     }
   ],
-  "random_sequence": "pixel_promise:block/voidshard_deposit"
+  "random_sequence": "pixel_promise:block/void_shard_deposit"
 }

@@ -14,7 +14,8 @@
       "com.moovintwo.pixel_promise.Pixel_promiseDataGenerator"
     ],
     "client": [
-      "com.moovintwo.pixel_promise.Pixel_promiseClient"
+      "com.moovintwo.pixel_promise.Pixel_promiseClient",
+      "com.moovintwo.pixel_promise.client.PlayerStateHud"
     ],
     "main": [
       "com.moovintwo.pixel_promise.Pixel_promise"

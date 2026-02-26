@@ -4,7 +4,6 @@ import com.moovintwo.pixel_promise.Pixel_promise;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
 import net.minecraft.block.ExperienceDroppingBlock;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -14,10 +13,10 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 
-public class ModBlocks {
-    public static final Block VOIDSHARD_DEPOSIT = registerBlock("voidshard_deposit",
+public class Blocks {
+    public static final Block VOID_SHARD_DEPOSIT = registerBlock("void_shard_deposit",
             new ExperienceDroppingBlock(FabricBlockSettings
-                    .copyOf(Blocks.IRON_BLOCK)
+                    .copyOf(net.minecraft.block.Blocks.IRON_BLOCK)
                     .sounds(BlockSoundGroup.AMETHYST_BLOCK)
                     .strength(4f)
                     .solid(),
@@ -35,7 +34,7 @@ public class ModBlocks {
                 new BlockItem(block, new FabricItemSettings()));
     }
 
-    public static void registerModBlocks() {
+    public static void registerBlocks() {
         Pixel_promise.LOGGER.info("Registering ModBlocks for " + Pixel_promise.MOD_ID);
     }
 }
