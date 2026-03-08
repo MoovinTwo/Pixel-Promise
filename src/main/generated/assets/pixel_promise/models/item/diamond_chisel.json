@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "pixel_promise:item/diamond_chisel"
+  }
+}

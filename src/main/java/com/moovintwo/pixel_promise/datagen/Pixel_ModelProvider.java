@@ -24,6 +24,7 @@ public class Pixel_ModelProvider extends FabricModelProvider {
         itemModelGenerator.register(Pixel_Items.BINDING_CHARM, Models.GENERATED);
         itemModelGenerator.register(Pixel_Items.UNPOLISHED_BLOODSTONE, Models.GENERATED);
         itemModelGenerator.register(Pixel_Items.POLISHED_BLOODSTONE, Models.GENERATED);
+        itemModelGenerator.register(Pixel_Items.DIAMOND_CHISEL, Models.HANDHELD);
     }
 
     @Override

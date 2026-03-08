@@ -28,6 +28,8 @@ public class Pixel_EngLangProvider extends FabricLanguageProvider {
         translationBuilder.add(Pixel_Items.UNPOLISHED_BLOODSTONE, "Unpolished Bloodstone");
         translationBuilder.add(Pixel_Items.POLISHED_BLOODSTONE, "Polished Bloodstone");
 
+        translationBuilder.add(Pixel_Items.DIAMOND_CHISEL, "Diamond Chisel");
+
         translationBuilder.add(Pixel_Blocks.BLOODSTONE_DEPOSIT, "Bloodstone Deposit");
 
         translationBuilder.add(Pixel_Effects.FRACTURED_KEY, "Fractured");

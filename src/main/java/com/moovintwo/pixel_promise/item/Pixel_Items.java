@@ -2,6 +2,7 @@ package com.moovintwo.pixel_promise.item;
 
 import com.moovintwo.pixel_promise.Pixel_promise;
 import com.moovintwo.pixel_promise.item.end.BindingCharm;
+import com.moovintwo.pixel_promise.item.tools.Chisel;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
@@ -14,6 +15,12 @@ public class Pixel_Items {
             new BindingCharm(new FabricItemSettings()
                     .maxCount(8)
                     .rarity(Rarity.EPIC)
+            ));
+
+    public static final Item DIAMOND_CHISEL = registerItem("diamond_chisel",
+            new Chisel(new FabricItemSettings()
+                    .maxDamage(64)
+
             ));
 
     public static final Item UNPOLISHED_BLOODSTONE = registerItem("unpolished_bloodstone", new Item(new FabricItemSettings()));

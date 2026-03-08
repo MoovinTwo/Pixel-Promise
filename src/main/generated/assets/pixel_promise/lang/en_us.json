@@ -3,9 +3,10 @@
   "effect.pixel_promise.fractured": "Fractured",
   "enchantment.pixel_promise.pride": "Pride",
   "item.pixel_promise.binding_charm": "Binding Charm",
+  "item.pixel_promise.diamond_chisel": "Diamond Chisel",
   "item.pixel_promise.icon": "Logo",
   "item.pixel_promise.polished_bloodstone": "Polished Bloodstone",
   "item.pixel_promise.unpolished_bloodstone": "Unpolished Bloodstone",
-  "itemGroup.pixel_promise.pixel_sin_group": "Pixel Sin Group",
+  "itemGroup.pixel_promise.pixel_promise_group": "Pixel Sin Group",
   "tooltip.pixel_promise.binding_charm": "A ring that binds you to an evil force"
 }
