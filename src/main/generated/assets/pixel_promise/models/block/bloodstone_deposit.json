@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "pixel_promise:block/bloodstone_deposit"
+  }
+}

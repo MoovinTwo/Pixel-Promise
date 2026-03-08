@@ -1,7 +1,7 @@
 package com.moovintwo.pixel_promise.events.enchantment.sins;
 
-import com.moovintwo.pixel_promise.effect.Effects;
-import com.moovintwo.pixel_promise.enchantment.Enchantments;
+import com.moovintwo.pixel_promise.effect.Pixel_Effects;
+import com.moovintwo.pixel_promise.enchantment.Pixel_Enchantments;
 import com.moovintwo.pixel_promise.state.PlayerState;
 import net.fabricmc.fabric.api.entity.event.v1.ServerLivingEntityEvents;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -21,7 +21,7 @@ public class PrideEvent {
 
                 var chestStack = player.getInventory().getArmorStack(2);
 
-                int level = EnchantmentHelper.getLevel(Enchantments.PRIDE, chestStack);
+                int level = EnchantmentHelper.getLevel(Pixel_Enchantments.PRIDE, chestStack);
 
                 if (level > 0) {
 
@@ -33,7 +33,7 @@ public class PrideEvent {
                         if (state.getPridefulness() < 100) {
                             state.setPridefulness(state.getPridefulness() + 5);
                             if (state.getPridefulness() >= 100) {
-                                StatusEffectInstance fractured = new StatusEffectInstance(Effects.FRACTURED, 600, 0);
+                                StatusEffectInstance fractured = new StatusEffectInstance(Pixel_Effects.FRACTURED, 600, 0);
                                 player.addStatusEffect(fractured);
                             }
                         } else {
@@ -41,7 +41,7 @@ public class PrideEvent {
                             state.setPridefulness(state.getPridefulness() + 5);
 
                             int prideOverflow = (state.getPridefulness() - 100)/10;
-                            StatusEffectInstance currentFractured = player.getStatusEffect(Effects.FRACTURED);
+                            StatusEffectInstance currentFractured = player.getStatusEffect(Pixel_Effects.FRACTURED);
 
                             int overflowDuration = 600;
                             if (currentFractured != null) {
@@ -50,7 +50,7 @@ public class PrideEvent {
 
                             if (currentFractured == null || currentFractured.getAmplifier() != prideOverflow) {
                                 player.addStatusEffect(new StatusEffectInstance(
-                                        Effects.FRACTURED,
+                                        Pixel_Effects.FRACTURED,
                                         overflowDuration,
                                         prideOverflow
                                 ));

@@ -1,10 +1,12 @@
 package com.moovintwo.pixel_promise.client;
 
+import com.moovintwo.pixel_promise.enchantment.Pixel_Enchantments;
 import com.moovintwo.pixel_promise.state.PlayerState;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.PlayerEntity;
 
 public class PlayerStateHud implements ClientModInitializer {
@@ -19,36 +21,24 @@ public class PlayerStateHud implements ClientModInitializer {
         PlayerEntity player = client.player;
         if (player == null) return;
 
-        // Cast to PlayerState
         PlayerState state = (PlayerState) player;
-
-        // Read values
         int pride = state.getPridefulness();
+        String hudText = String.format("Pride: %d", pride);
+        var chestStack = player.getInventory().getArmorStack(2);
+        int prideLevel = EnchantmentHelper.getLevel(Pixel_Enchantments.PRIDE, chestStack);
 
-        // Build HUD string
-        String hudText = String.format(
-                "Pride: %d",
-                pride
-        );
+        int prideValuePlace;
 
-        // Draw string using DrawContext
-
-        if (pride <= 100) {
-            drawContext.drawTextWithShadow(
-                    client.textRenderer,    // TextRenderer
-                    hudText,                // string
-                    10,                     // x
-                    10,                     // y
-                    0xFFFF00                // color
-            );
+        if (pride == 0) {
+            prideValuePlace = 1;
         } else {
-            drawContext.drawTextWithShadow(
-                    client.textRenderer,    // TextRenderer
-                    hudText,                // string
-                    10,                     // x
-                    10,                     // y
-                    0xff442e               // color
-            );
+            prideValuePlace = (int) (Math.floor(Math.log10(pride)) + 1);
         }
+
+        if (prideLevel > 0) {
+            drawContext.fill(8, 8, 50 + prideValuePlace * 5, 19, 0xFF575757);
+            drawContext.drawTextWithShadow(client.textRenderer, hudText, 10, 10, (pride <= 100) ? 0xFFFF00 : 0xFF442E);
+        }
+
     }
 }

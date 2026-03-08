@@ -3,7 +3,7 @@
   "id": "pixel_promise",
   "version": "${version}",
   "name": "Pixel Promise",
-  "description": "A magic mod for Minecraft 1.20.1",
+  "description": "A non traditional magic mod for Minecraft 1.20.1",
   "authors": ["Moovintwo"],
   "contact": {},
   "license": "Apache-2.0",
@@ -11,7 +11,7 @@
   "environment": "*",
   "entrypoints": {
     "fabric-datagen": [
-      "com.moovintwo.pixel_promise.Pixel_promiseDataGenerator"
+      "com.moovintwo.pixel_promise.datagen.Pixel_promiseDataGenerator"
     ],
     "client": [
       "com.moovintwo.pixel_promise.Pixel_promiseClient",

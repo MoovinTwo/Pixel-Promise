@@ -1,6 +1,6 @@
 package com.moovintwo.pixel_promise.mixin;
 
-import com.moovintwo.pixel_promise.effect.Effects;
+import com.moovintwo.pixel_promise.effect.Pixel_Effects;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.damage.DamageSource;
@@ -20,12 +20,12 @@ public abstract class EffectMixin {
 
         LivingEntity entity = (LivingEntity)(Object)this;
 
-        if (!entity.hasStatusEffect(Effects.FRACTURED)) {
+        if (!entity.hasStatusEffect(Pixel_Effects.FRACTURED)) {
             return amount;
         }
 
         StatusEffectInstance effect =
-                entity.getStatusEffect(Effects.FRACTURED);
+                entity.getStatusEffect(Pixel_Effects.FRACTURED);
 
         if (effect == null) {
             return amount;

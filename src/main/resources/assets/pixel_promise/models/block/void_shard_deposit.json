@@ -1,6 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "pixel_promise:block/void_shard_deposit"
-  }
-}

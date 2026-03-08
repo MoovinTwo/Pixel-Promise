@@ -1,11 +1,12 @@
 package com.moovintwo.pixel_promise;
 
-import com.moovintwo.pixel_promise.block.Blocks;
-import com.moovintwo.pixel_promise.effect.Effects;
-import com.moovintwo.pixel_promise.enchantment.Enchantments;
-import com.moovintwo.pixel_promise.events.Events;
-import com.moovintwo.pixel_promise.item.ItemGroups;
-import com.moovintwo.pixel_promise.item.Items;
+import com.moovintwo.pixel_promise.block.Pixel_Blocks;
+import com.moovintwo.pixel_promise.effect.Pixel_Effects;
+import com.moovintwo.pixel_promise.enchantment.Pixel_Enchantments;
+import com.moovintwo.pixel_promise.events.Pixel_Events;
+import com.moovintwo.pixel_promise.item.Pixel_ItemGroups;
+import com.moovintwo.pixel_promise.item.Pixel_Items;
+import com.moovintwo.pixel_promise.world.gen.Pixel_WorldGeneration;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,12 +18,14 @@ public class Pixel_promise implements ModInitializer {
     @Override
     public void onInitialize() {
 
-        ItemGroups.registerItemGroups();
-        Items.registerItems();
-        Blocks.registerBlocks();
-        Enchantments.registerEnchantments();
-        Events.registerEvents();
-        Effects.registerEffects();
+        Pixel_ItemGroups.registerItemGroups();
+        Pixel_Items.registerItems();
+        Pixel_Blocks.registerBlocks();
+        Pixel_Enchantments.registerEnchantments();
+        Pixel_Events.registerEvents();
+        Pixel_Effects.registerEffects();
+
+        Pixel_WorldGeneration.generateWorldGen();
 
     }
 }
