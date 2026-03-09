@@ -1,5 +1,6 @@
 package com.moovintwo.pixel_promise;
 
+import com.moovintwo.pixel_promise.block.PillarType;
 import com.moovintwo.pixel_promise.block.Pixel_Blocks;
 import com.moovintwo.pixel_promise.effect.Pixel_Effects;
 import com.moovintwo.pixel_promise.enchantment.Pixel_Enchantments;
@@ -18,9 +19,10 @@ public class Pixel_promise implements ModInitializer {
     @Override
     public void onInitialize() {
 
-        Pixel_ItemGroups.registerItemGroups();
+        PillarType.registerBlocks();
         Pixel_Items.registerItems();
         Pixel_Blocks.registerBlocks();
+        Pixel_ItemGroups.registerItemGroups();
         Pixel_Enchantments.registerEnchantments();
         Pixel_Events.registerEvents();
         Pixel_Effects.registerEffects();

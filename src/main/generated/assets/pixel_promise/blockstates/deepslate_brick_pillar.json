@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "above=false,below=false": {
+      "model": "pixel_promise:block/pillars/deepslate_brick/pillar"
+    },
+    "above=false,below=true": {
+      "model": "pixel_promise:block/pillars/deepslate_brick/pillar_base"
+    },
+    "above=true,below=false": {
+      "model": "pixel_promise:block/pillars/deepslate_brick/pillar_top"
+    },
+    "above=true,below=true": {
+      "model": "pixel_promise:block/pillars/deepslate_brick/pillar_center"
+    }
+  }
+}

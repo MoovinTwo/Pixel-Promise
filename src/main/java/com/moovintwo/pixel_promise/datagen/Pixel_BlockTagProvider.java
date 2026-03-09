@@ -1,6 +1,7 @@
 package com.moovintwo.pixel_promise.datagen;
 
 
+import com.moovintwo.pixel_promise.block.PillarType;
 import com.moovintwo.pixel_promise.block.Pixel_Blocks;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
@@ -22,6 +23,11 @@ public class Pixel_BlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
         getOrCreateTagBuilder(BlockTags.NEEDS_DIAMOND_TOOL)
                 .add(Pixel_Blocks.BLOODSTONE_DEPOSIT);
+
+        for (PillarType type : PillarType.PILLARS) {
+            getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
+                    .add(type.pillarBlock());
+        }
 
     }
 }

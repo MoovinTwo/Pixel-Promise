@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "above=false,below=false": {
+      "model": "pixel_promise:block/pillars/polished_deepslate/pillar"
+    },
+    "above=false,below=true": {
+      "model": "pixel_promise:block/pillars/polished_deepslate/pillar_base"
+    },
+    "above=true,below=false": {
+      "model": "pixel_promise:block/pillars/polished_deepslate/pillar_top"
+    },
+    "above=true,below=true": {
+      "model": "pixel_promise:block/pillars/polished_deepslate/pillar_center"
+    }
+  }
+}

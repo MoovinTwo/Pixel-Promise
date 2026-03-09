@@ -6,4 +6,4 @@ Pixel Promise is a non traditional magic mod in development. Spells are not plan
 - [x] Add a Basic Framework to use
 - [x] Add FabricDataGen
 - [ ] Add all the Sins (Including Mechanics)
-- [ ] Add all of the virtues (Including Mechanics)
+- [ ] Add all the virtues (Including Mechanics)

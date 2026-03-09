@@ -1,0 +1,6 @@
+{
+  "parent": "pixel_promise:block/templates/pillar_center",
+  "textures": {
+    "texture": "pixel_promise:block/pillars/deepslate_brick"
+  }
+}

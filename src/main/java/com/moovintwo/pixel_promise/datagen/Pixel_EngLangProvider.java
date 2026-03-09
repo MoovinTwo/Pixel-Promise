@@ -1,6 +1,7 @@
 package com.moovintwo.pixel_promise.datagen;
 
 import com.moovintwo.pixel_promise.Pixel_promise;
+import com.moovintwo.pixel_promise.block.PillarType;
 import com.moovintwo.pixel_promise.block.Pixel_Blocks;
 import com.moovintwo.pixel_promise.effect.Pixel_Effects;
 import com.moovintwo.pixel_promise.enchantment.Pixel_Enchantments;
@@ -39,6 +40,17 @@ public class Pixel_EngLangProvider extends FabricLanguageProvider {
         translationBuilder.add(Pixel_ItemGroups.SIN_GROUP_KEY, "Pixel Sin Group");
 
         translationBuilder.add(tooltipKey("binding_charm"), "A ring that binds you to an evil force");
+
+        for (PillarType type : PillarType.PILLARS) {
+
+            String name = type.name().replace("_", " ");
+            name = Character.toUpperCase(name.charAt(0)) + name.substring(1);
+
+            translationBuilder.add(
+                    type.pillarBlock(),
+                    name + " Pillar"
+            );
+        }
 
     }
 

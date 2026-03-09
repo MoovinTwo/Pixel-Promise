@@ -1,5 +1,6 @@
 package com.moovintwo.pixel_promise.datagen;
 
+import com.moovintwo.pixel_promise.datagen.customBlockModel.PillarModelProvider;
 import com.moovintwo.pixel_promise.world.Pixel_ConfiguredFeatures;
 import com.moovintwo.pixel_promise.world.Pixel_PlacedFeatures;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
@@ -19,6 +20,7 @@ public class Pixel_promiseDataGenerator implements DataGeneratorEntrypoint {
         pack.addProvider(Pixel_BlockTagProvider::new);
         pack.addProvider(Pixel_ItemTagProvider::new);
         pack.addProvider(Pixel_WorldGenerator::new);
+        pack.addProvider(PillarModelProvider::new);
 
     }
 

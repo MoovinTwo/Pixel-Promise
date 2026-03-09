@@ -1,4 +1,4 @@
-package com.moovintwo.pixel_promise.item.tools;
+package com.moovintwo.pixel_promise.item.tools.Chisel;
 
 import com.moovintwo.pixel_promise.item.Pixel_Items;
 import net.minecraft.entity.LivingEntity;
@@ -8,15 +8,16 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.particle.ItemStackParticleEffect;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.UseAction;
 import net.minecraft.world.World;
 
-public class Chisel extends Item {
+public class Chisel_Item extends Item {
 
-    public Chisel(Settings settings) { super(settings); }
+    public Chisel_Item(Settings settings) { super(settings); }
 
     @Override
     public int getMaxUseTime(ItemStack stack) {
@@ -25,7 +26,7 @@ public class Chisel extends Item {
 
     @Override
     public UseAction getUseAction(ItemStack stack) {
-        return UseAction.BRUSH;
+        return UseAction.DRINK;
     }
 
     @Override
@@ -54,30 +55,14 @@ public class Chisel extends Item {
 
             float pitch = 0.9f + world.random.nextFloat() * 0.3f;
 
-            world.playSound(
-                    null,
-                    player.getBlockPos(),
-                    SoundEvents.BLOCK_STONE_HIT,
-                    SoundCategory.PLAYERS,
-                    0.7f,
-                    pitch
-            );
+            playSound(world, player, SoundEvents.BLOCK_STONE_HIT, SoundCategory.PLAYERS, 0.7f, pitch);
+
         }
 
         if (world.isClient && remainingUseTicks % 3 == 0) {
 
-            for (int i = 0; i < 1; i++) {
+            renderItemParticles(offhand.getItem(), player, world);
 
-                world.addParticle(
-                        new ItemStackParticleEffect(ParticleTypes.ITEM, new ItemStack(Pixel_Items.UNPOLISHED_BLOODSTONE)),
-                        player.getX() + player.getRotationVector().x * 0.6,
-                        player.getY() + 1.2,
-                        player.getZ() + player.getRotationVector().z * 0.6,
-                        (world.random.nextDouble() - 0.5) * 0.15,
-                        world.random.nextDouble() * 0.15,
-                        (world.random.nextDouble() - 0.5) * 0.15
-                );
-            }
         }
 
         if (remainingUseTicks == 1 && !world.isClient) {
@@ -86,19 +71,36 @@ public class Chisel extends Item {
 
             ItemStack polished = new ItemStack(Pixel_Items.POLISHED_BLOODSTONE);
 
-            if (!player.getInventory().insertStack(polished)) {
-                player.dropItem(polished, false);
-            }
+            if (!player.getInventory().insertStack(polished)) { player.dropItem(polished, false); }
 
             stack.damage(1, player, p -> p.sendToolBreakStatus(player.getActiveHand()));
 
-            world.playSound(
-                    null,
-                    player.getBlockPos(),
-                    SoundEvents.BLOCK_GRINDSTONE_USE,
-                    SoundCategory.PLAYERS,
-                    1f,
-                    1f
+            playSound(world, player, SoundEvents.BLOCK_GRINDSTONE_USE, SoundCategory.PLAYERS, 1f, 1f);
+
+        }
+    }
+
+    private void playSound(World world, LivingEntity player, SoundEvent sound, SoundCategory category, float volume, float pitch) {
+        world.playSound(
+                null,
+                player.getBlockPos(),
+                sound,
+                category,
+                volume,
+                pitch
+        );
+    }
+
+    private void renderItemParticles(Item item, PlayerEntity player, World world) {
+        for (int i = 0; i < 1; i++) {
+            world.addParticle(
+                    new ItemStackParticleEffect(ParticleTypes.ITEM, new ItemStack(item)),
+                    player.getX() + player.getRotationVector().x * 0.6,
+                    player.getY() + 1.2,
+                    player.getZ() + player.getRotationVector().z * 0.6,
+                    (world.random.nextDouble() - 0.5) * 0.15,
+                    world.random.nextDouble() * 0.15,
+                    (world.random.nextDouble() - 0.5) * 0.15
             );
         }
     }

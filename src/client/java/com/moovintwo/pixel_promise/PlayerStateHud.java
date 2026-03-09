@@ -1,22 +1,15 @@
-package com.moovintwo.pixel_promise.client;
+package com.moovintwo.pixel_promise;
 
 import com.moovintwo.pixel_promise.enchantment.Pixel_Enchantments;
 import com.moovintwo.pixel_promise.state.PlayerState;
-import net.fabricmc.api.ClientModInitializer;
-import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.PlayerEntity;
 
-public class PlayerStateHud implements ClientModInitializer {
+public class PlayerStateHud {
 
-    @Override
-    public void onInitializeClient() {
-        HudRenderCallback.EVENT.register(this::renderHud);
-    }
-
-    private void renderHud(DrawContext drawContext, float tickDelta) {
+    static void renderHud(DrawContext drawContext, float tickDelta) {
         MinecraftClient client = MinecraftClient.getInstance();
         PlayerEntity player = client.player;
         if (player == null) return;

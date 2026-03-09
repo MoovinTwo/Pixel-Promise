@@ -1,6 +1,7 @@
 package com.moovintwo.pixel_promise.item;
 
 import com.moovintwo.pixel_promise.Pixel_promise;
+import com.moovintwo.pixel_promise.block.PillarType;
 import com.moovintwo.pixel_promise.block.Pixel_Blocks;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemStack;
@@ -21,6 +22,12 @@ public class Pixel_ItemGroups {
                         entries.add(Pixel_Items.UNPOLISHED_BLOODSTONE);
                         entries.add(Pixel_Items.POLISHED_BLOODSTONE);
                         entries.add(Pixel_Blocks.BLOODSTONE_DEPOSIT);
+                        entries.add(Pixel_Items.DIAMOND_CHISEL);
+
+                        for (PillarType type : PillarType.PILLARS) {
+                            entries.add(type.pillarBlock());
+                        }
+
                     }).build());
 
 

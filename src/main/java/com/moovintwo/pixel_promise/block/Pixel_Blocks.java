@@ -24,6 +24,9 @@ public class Pixel_Blocks {
             ));
 
 
+
+
+
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
         return Registry.register(Registries.BLOCK, new Identifier(Pixel_promise.MOD_ID, name), block);

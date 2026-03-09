@@ -14,15 +14,14 @@
       "com.moovintwo.pixel_promise.datagen.Pixel_promiseDataGenerator"
     ],
     "client": [
-      "com.moovintwo.pixel_promise.Pixel_promiseClient",
-      "com.moovintwo.pixel_promise.client.PlayerStateHud"
+      "com.moovintwo.pixel_promise.Pixel_promiseClient"
     ],
     "main": [
       "com.moovintwo.pixel_promise.Pixel_promise"
     ]
   },
   "mixins": [
-    "pixel_promise.mixins.json",
+    "pixel_promise-common.mixins.json",
     {
       "config": "pixel_promise.client.mixins.json",
       "environment": "client"

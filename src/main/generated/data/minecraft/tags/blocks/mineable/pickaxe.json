@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
-    "pixel_promise:bloodstone_deposit"
+    "pixel_promise:bloodstone_deposit",
+    "pixel_promise:polished_deepslate_pillar",
+    "pixel_promise:deepslate_brick_pillar"
   ]
 }
